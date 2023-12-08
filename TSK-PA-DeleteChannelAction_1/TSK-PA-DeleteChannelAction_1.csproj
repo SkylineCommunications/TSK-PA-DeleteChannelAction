@@ -16,8 +16,20 @@
 	<PropertyGroup>
 		<DefineConstants>$(DefineConstants);DCFv1;DBInfo;ALARM_SQUASHING</DefineConstants>
 	</PropertyGroup>
+	<PropertyGroup>
+		<DisableImplicitFrameworkReferences>true</DisableImplicitFrameworkReferences>
+	</PropertyGroup>
 	<ItemGroup>
-		<PackageReference Include="Skyline.DataMiner.Dev.Automation" Version="10.1.0.6" />
+		<PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+		<PackageReference Include="Skyline.DataMiner.Dev.Automation" Version="10.3.12.2" />
+	</ItemGroup>
+	<ItemGroup>
+	  <Reference Include="Newtonsoft.Json">
+	    <HintPath>..\..\..\..\..\..\Skyline DataMiner\Files\Newtonsoft.Json.dll</HintPath>
+	  </Reference>
+	  <Reference Include="ProcessAutomation">
+	    <HintPath>..\..\..\..\..\..\Skyline DataMiner\ProtocolScripts\ProcessAutomation.dll</HintPath>
+	  </Reference>
 	</ItemGroup>
 	<ProjectExtensions>
 	    <VisualStudio>
