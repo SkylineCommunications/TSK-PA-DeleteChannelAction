@@ -51,22 +51,22 @@ DATE		VERSION		AUTHOR			COMMENTS
 
 namespace TSK_PA_DeleteChannelAction_1
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using Newtonsoft.Json;
-    using Skyline.DataMiner.Automation;
-    using Skyline.DataMiner.Library.Solutions.SRM;
-    using Skyline.DataMiner.Net.Apps.DataMinerObjectModel;
-    using Skyline.DataMiner.Net.Apps.DataMinerObjectModel.Actions;
-    using Skyline.DataMiner.Net.History;
-    using Skyline.DataMiner.Net.Messages;
-    using Skyline.DataMiner.Net.Messages.SLDataGateway;
-    using Skyline.DataMiner.Net.Profiles;
-    using Skyline.DataMiner.Net.ResourceManager.Objects;
-    using Skyline.DataMiner.Net.Sections;
-    using Skyline.DataMiner.DataMinerSolutions.ProcessAutomation.Objects;
-    using Skyline.DataMiner.DataMinerSolutions.ProcessAutomation.MessageHandler;
+	using System;
+	using System.Collections.Generic;
+	using System.Linq;
+	using Newtonsoft.Json;
+	using Skyline.DataMiner.Automation;
+	using Skyline.DataMiner.DataMinerSolutions.ProcessAutomation.MessageHandler;
+	using Skyline.DataMiner.DataMinerSolutions.ProcessAutomation.Objects;
+	using Skyline.DataMiner.Library.Solutions.SRM;
+	using Skyline.DataMiner.Net.Apps.DataMinerObjectModel;
+	using Skyline.DataMiner.Net.Apps.DataMinerObjectModel.Actions;
+	using Skyline.DataMiner.Net.History;
+	using Skyline.DataMiner.Net.Messages;
+	using Skyline.DataMiner.Net.Messages.SLDataGateway;
+	using Skyline.DataMiner.Net.Profiles;
+	using Skyline.DataMiner.Net.ResourceManager.Objects;
+	using Skyline.DataMiner.Net.Sections;
 
     /// <summary>
     /// DataMiner Script Class.
