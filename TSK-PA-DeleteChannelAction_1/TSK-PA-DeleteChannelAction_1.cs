@@ -71,42 +71,38 @@ namespace TSK_PA_DeleteChannelAction_1
     /// <summary>
     /// DataMiner Script Class.
     /// </summary>
-    public class Script
+	public class Script
     {
-        private Engine _engine;
-
         /// <summary>
         /// The Script entry point.
         /// </summary>
         /// <param name="engine">Link with SLAutomation process.</param>
         public void Run(Engine engine)
         {
-
             string guids = engine.GetScriptParam("guids").Value;
             engine.GenerateInformation("guids: " + guids);
 
-
             string processName = "Delete Channel";
 
-
-            //string processName = "Create Channels";
+            // string processName = "Create Channels";
             var domHelper = new DomHelper(engine.SendSLNetMessages, "process_automation");
-            //var domInstanceFilter = DomInstanceExposers.Id.Equal(Guid.Parse(GUID));
+
+            // var domInstanceFilter = DomInstanceExposers.Id.Equal(Guid.Parse(GUID));
             List<Guid> allGuids = ParseGuidList(guids);
 
             foreach (Guid myGuid in allGuids)
             {
                 var domInstanceFilter = DomInstanceExposers.Id.Equal(myGuid);
-                var instances = domHelper.DomInstances.Read(domInstanceFilter).First();
+                var instances = domHelper.DomInstances.Read(domInstanceFilter)[0];
                 ProcessHelper.PushToken(processName, "Jeroen", instances.ID);
             }
         }
 
         private List<Guid> ParseGuidList(string guids)
         {
-            guids = guids.Replace("[", "");
-            guids = guids.Replace("]", "");
-            guids = guids.Replace("\"", "");
+            guids = guids.Replace("[", String.Empty);
+            guids = guids.Replace("]", String.Empty);
+            guids = guids.Replace("\"", String.Empty);
             return Array.ConvertAll(guids.Split(','), s => new Guid(s)).ToList();
         }
     }
